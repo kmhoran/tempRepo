@@ -16,6 +16,6 @@ def run(args=None):
 
 
 if __name__ == "__main__":
-    print("Entering argiment parser!")
+    print("Entering argument parser!")
     args = arg_parse()
     run(args)
