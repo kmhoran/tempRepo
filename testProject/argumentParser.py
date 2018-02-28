@@ -15,7 +15,7 @@ def run(args=None):
             print("no tweeting today")
 
 # 
-# comment dd
+# comment
 if __name__ == "__main__":
     print("Entering argument parser!")
     args = arg_parse()
