@@ -19,4 +19,4 @@ def run(args=None):
 if __name__ == "__main__":
     print("Entering argument parser!")
     args = arg_parse()
-    run(args)s
+    run(args)
