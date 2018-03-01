@@ -15,7 +15,7 @@ def run(args=None):
             print("no tweeting today")
 
 # 
-#d commsj
+#d comm
 if __name__ == "__main__":
     print("Entering argument parser!")
     args = arg_parse()
