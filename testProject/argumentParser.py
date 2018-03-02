@@ -1,22 +1,34 @@
+import os
 import argparse
+import configparser
+from lib import config_manager
+from lib.modules.twitter_bug import Twitter
+
+
 
 def arg_parse():
     parser = argparse.ArgumentParser(description="test parser")
-    parser.add_argument("-t", "--twitter", action='store_true')
+    parser.add_argument("commit_message", type=str, help="the message from the last commit")
     return parser.parse_args()
+    
+
+
 
 def run(args=None):
-    if not args:
-        print ("No args given")
-    else: 
-        if args.twitter:
-            print("Let's tweet!")
-        else:
-            print("no tweeting today")
+    config_file = config_manager.get_confilg_file()
 
-# sss
-#d comm
+    config = configparser.ConfigParser()
+    config.read(config_file)
+    profile = config._sections
+    if not args:
+        print ("\nNo args given")
+    else: 
+        twitter = Twitter(profile)
+        print("\n")
+        twitter.Tweet(args.commit_message)
+
+
 if __name__ == "__main__":
-    print("Entering argument parser!")
+
     args = arg_parse()
     run(args)
